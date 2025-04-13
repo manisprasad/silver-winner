@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export const useSocket = () => {
     const [socket, setSocket] = useState<WebSocket | null>(null);
     useEffect(() => {
-        const wss = new WebSocket("ws://localhost:8080");
+        const wss = new WebSocket("wss://chess-websocket-vi9b.onrender.com");
         wss.onopen = () => {
             console.log("WebSocket connection opened");
             setSocket(wss);
